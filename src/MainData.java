@@ -1,12 +1,12 @@
 public class MainData {
-    float temp;
-    float feel_like;
-    float temp_min;
-    float temp_max;
-    int pressure;
-    int humidity;
-    int sea_level;
-    int grnd_level;
+    private float temp;
+    private float feel_like;
+    private float temp_min;
+    private float temp_max;
+    private int pressure;
+    private int humidity;
+    private int sea_level;
+    private int grnd_level;
 
     public float getTemp() {
         return temp;

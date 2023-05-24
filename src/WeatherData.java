@@ -1,8 +1,8 @@
 public class WeatherData {
-    int id;
-    String main;
-    String description;
-    String icon;
+    private int id;
+    private String main;
+    private String description;
+    private String icon;
 
     public int getId() {
         return id;

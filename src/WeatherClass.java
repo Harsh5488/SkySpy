@@ -1,17 +1,17 @@
 public class WeatherClass {
-    Coordinates coord;
-    WeatherData[] weather;
-    String base;
-    MainData main;
-    int visibility;
-    Wind wind;
-    Clouds clouds;
-    long dt;
-    Sys sys;
-    int timezone;
-    long id;
-    String name;
-    int cod;
+    private Coordinates coord;
+    private WeatherData[] weather;
+    private String base;
+    private MainData main;
+    private int visibility;
+    private Wind wind;
+    private Clouds clouds;
+    private long dt;
+    private Sys sys;
+    private int timezone;
+    private long id;
+    private String name;
+    private int cod;
 
     public Coordinates getCoord() {
         return coord;

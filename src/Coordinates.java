@@ -1,6 +1,6 @@
 public class Coordinates {
-    float lon;
-    float lat;
+    private float lon;
+    private float lat;
 
     public float getLon() {
         return lon;

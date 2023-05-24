@@ -1,7 +1,7 @@
 public class Wind {
-    float speed;
-    int deg;
-    float gust;
+    private float speed;
+    private int deg;
+    private float gust;
 
     public float getSpeed() {
         return speed;

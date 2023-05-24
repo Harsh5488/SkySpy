@@ -1,17 +1,28 @@
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class FetchWeather {
-    String apiKey = "fc853b4d52b5b246574b3f6ff1f63387";
-    String location = "Jaipur,Rajasthan,India";
-    String apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=metric";
+    private String apiKey;
+    private String location ;
+//    private String location = "Jaipur,Rajasthan,India";
+    private String apiUrl;
     WeatherClass w;
     public WeatherClass fetchData(){
         try {
+            BufferedReader br = new BufferedReader(new FileReader("APIKey.txt"));
+            StringBuilder key =new StringBuilder();
+            String temp;
+            while((temp=br.readLine())!=null){
+                key.append(temp);
+            }
+            br.close();
+            apiKey = key.toString();
+            apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=metric";
             URL url = new URL(apiUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -29,10 +40,8 @@ public class FetchWeather {
 
                 in.close();
 
-//                System.out.println(response);
-                // Process the JSON response here
                 Gson gson = new Gson();
-                w = gson.fromJson(response+"", WeatherClass.class);
+                w = gson.fromJson(response.toString(), WeatherClass.class);
                 return w;
             }
         }
@@ -40,5 +49,8 @@ public class FetchWeather {
             ex.printStackTrace();
         }
         return w;
+    }
+    public void setLocation(String Location){
+        location = Location;
     }
 }

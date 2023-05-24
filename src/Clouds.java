@@ -1,5 +1,5 @@
 public class Clouds {
-    int all;
+    private int all;
 
     public int getAll() {
         return all;

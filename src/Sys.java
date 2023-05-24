@@ -1,7 +1,7 @@
 public class Sys {
-    int type;
-    int id;
-    String country;
+    private int type;
+    private int id;
+    private String country;
 
     public int getType() {
         return type;
